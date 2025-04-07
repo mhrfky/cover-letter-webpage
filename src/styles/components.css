@@ -1,0 +1,145 @@
+/* components.css - Styling for components like cards, tags, etc. */
+@import './base.css';
+@import './projectCard.css';
+/* Card styling */
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
+}
+/* Base styles for various cards */
+.narrative-card,
+.skill-card,
+.job-card,
+.project-card {
+  box-sizing: border-box;
+}
+
+.narrative-card h2,
+.skill-card h3,
+.job-card h3,
+.project-card h3 {
+  margin-top: 0;
+  color: #f8f8f8;
+}
+
+.narrative-card p,
+.skill-card p,
+.job-card p,
+.project-card p {
+  line-height: 1.6;
+}
+
+/* Base styles for the job card */
+.job-card {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Left-aligned job card */
+.job-card-left {
+  text-align: left;
+}
+
+/* Right-aligned job card */
+.job-card-right {
+  text-align: right;
+}
+
+/* Styles for list items based on alignment */
+.job-card-left .job-responsibilities ul {
+  padding-left: 1.5rem;
+  padding-right: 0;
+  text-align: left;
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+/* Right-aligned list requires custom bullet points */
+.job-card-right .job-responsibilities ul {
+  padding-right: 0;
+  padding-left: 0;
+  text-align: right;
+  list-style-type: none;
+}
+
+.job-card-right .job-responsibilities ul li {
+  position: relative;
+  padding-right: 1.5em;
+}
+
+.job-card-right .job-responsibilities ul li::after {
+  content: "•";
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+}
+
+/* Make tech tags flow correctly based on alignment */
+.job-card-left .tech-tags {
+  justify-content: flex-start;
+}
+
+.job-card-right .tech-tags {
+  justify-content: flex-end;
+}
+
+/* Ensure the tech-tags container has proper display */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.narrative-gif {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.narrative-gif img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.caption {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+/* Tags styling */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Skills layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

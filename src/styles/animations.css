@@ -1,0 +1,204 @@
+/* animations.css - ONLY animation-related styles */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Base animation classes */
+.animated {
+  transition-property: opacity, transform, filter;
+}
+
+/* Duration classes */
+.duration-fast {
+  transition-duration: 500ms;
+}
+
+.duration-normal {
+  transition-duration: 1000ms;
+}
+
+.duration-slow {
+  transition-duration: 1500ms;
+}
+
+/* Animation types */
+.fade-hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.fade-show {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.slide-left-hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
+}
+
+.slide-left-show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+.slide-right-hidden {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+.slide-right-show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+.slide-top-hidden {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s ease;
+}
+
+.slide-top-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease;
+}
+
+.slide-bottom-hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.slide-bottom-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease;
+}
+
+.zoom-in-hidden {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 1s ease;
+}
+
+.zoom-in-show {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1s ease;
+}
+
+.flip-y-hidden {
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 1s ease;
+}
+
+.flip-y-show {
+  opacity: 1;
+  transform: rotateY(0);
+  transition: all 1s ease;
+}
+
+.rotate-hidden {
+  opacity: 0;
+  transform: rotate(-45deg);
+  transition: all 1s ease;
+}
+
+.rotate-show {
+  opacity: 1;
+  transform: rotate(0);
+  transition: all 1s ease;
+}
+
+.tilt-hidden {
+  opacity: 0;
+  transform: rotate(-10deg) translateX(-50px);
+  transition: all 1s ease;
+}
+
+.tilt-show {
+  opacity: 1;
+  transform: rotate(0) translateX(0);
+  transition: all 1s ease;
+}
+
+.bounce-hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.expand-hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  filter: blur(5px);
+  transition: all 1s ease;
+}
+
+.expand-show {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  transition: all 1s ease;
+}
+
+.spiral-hidden {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+  transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.spiral-show {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+  transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Delay classes */
+.delay-short {
+  transition-delay: 200ms;
+}
+
+.delay-medium {
+  transition-delay: 400ms;
+}
+
+.delay-long {
+  transition-delay: 600ms;
+}
+
+/* Animation for scroll arrow */
+.scroll-arrow {
+  animation: bounce 2s infinite;
+}
+
+/* Accessibility */
+@media(prefers-reduced-motion) {
+  .animated {
+    transition: none;
+  }
+  
+  .scroll-arrow {
+    animation: none;
+  }
+}

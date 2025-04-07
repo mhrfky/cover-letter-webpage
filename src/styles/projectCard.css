@@ -1,0 +1,79 @@
+/* Base styles for the project card */
+.project-card {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+  /* Left-aligned project card */
+  .project-card-left {
+    text-align: left;
+  }
+  
+  /* Right-aligned project card */
+  .project-card-right {
+    text-align: right;
+  }
+  
+  /* Styles for list items based on alignment */
+  .project-card-left .project-achievements ul {
+    padding-left: 1.5rem;
+    padding-right: 0;
+    text-align: left;
+    list-style-position: outside;
+    list-style-type: disc;
+  }
+  
+  /* Right-aligned list requires custom bullet points */
+  .project-card-right .project-achievements ul {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: right;
+    list-style-type: none;
+  }
+  
+  .project-card-right .project-achievements ul li {
+    position: relative;
+    padding-right: 1.5em;
+  }
+  
+  .project-card-right .project-achievements ul li::after {
+    content: "•";
+    position: absolute;
+    right: 0.5em;
+    top: 0;
+  }
+  
+  /* Make tech tags flow correctly based on alignment */
+  .project-card-left .tech-tags {
+    justify-content: flex-start;
+  }
+  
+  .project-card-right .tech-tags {
+    justify-content: flex-end;
+  }
+  
+  /* Project links alignment */
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .project-links-left {
+    justify-content: flex-start;
+  }
+  
+  .project-links-right {
+    justify-content: flex-end;
+  }
+  
+  .project-link {
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: 500;
+  }
+  
+  .project-link:hover {
+    text-decoration: underline;
+  }
