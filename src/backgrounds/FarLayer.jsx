@@ -1,93 +1,75 @@
-import React from 'react';
-import { useScroll } from '../context/ScrollContext';
+import React, { useMemo, useEffect } from 'react';
 
-const FarLayer = ({ config }) => {
-  const { scrollPercent } = useScroll();
-  
-  // Determine which background should be visible based on scroll percentage
-  const getCurrentBackground = () => {
-    for (const bg of config.backgrounds) {
-      if (scrollPercent >= bg.startAt && scrollPercent <= bg.endAt) {
-        return bg;
-      }
+/**
+ * FarLayer - Handles the furthest background layer with the slowest parallax movement
+ * This component just renders different backgrounds based on the active section
+ * and applies subtle parallax effects.
+ */
+const FarLayer = ({ activeSection, scrollPosition }) => {
+  // Log when props change to help debug
+  useEffect(() => {
+    console.log("FarLayer received new props:", { activeSection, scrollPosition });
+  }, [activeSection, scrollPosition]);
+
+  // Define background styles for each section
+  const sectionBackgrounds = useMemo(() => ({
+    'intro-section': {
+      background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
+    },
+    'talents-section': {
+      background: 'linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%)',
+    },
+    'academic-journey': {
+      background: 'linear-gradient(135deg, #4b6cb7 0%, #182848 100%)',
+    },
+    'experience-section': {
+      background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+    },
+    'projects-section': {
+      background: 'linear-gradient(135deg, #3a6186 0%, #89253e 100%)',
+    },
+    'conclusion-section': {
+      background: 'linear-gradient(135deg, #004e92 0%, #000428 100%)',
+    },
+    'highschool-section': {
+      background: 'linear-gradient(135deg, #4b6cb7 0%, #182848 100%)',
     }
-    return config.backgrounds[0]; // Default to first background
-  };
-  
-  const currentBg = getCurrentBackground();
-  
-  // Calculate transition progress when between backgrounds
-  const getTransitionProgress = (bg) => {
-    const nextBgIndex = config.backgrounds.findIndex(b => b.id === bg.id) + 1;
-    if (nextBgIndex >= config.backgrounds.length) return 0;
-    
-    const nextBg = config.backgrounds[nextBgIndex];
-    const transitionStart = nextBg.startAt - 0.05; // Start transition slightly before next bg
-    
-    if (scrollPercent < transitionStart) return 0;
-    if (scrollPercent > nextBg.startAt) return 1;
-    
-    return (scrollPercent - transitionStart) / (nextBg.startAt - transitionStart);
-  };
-  
-  const transitionProgress = getTransitionProgress(currentBg);
-  const nextBgIndex = config.backgrounds.findIndex(b => b.id === currentBg.id) + 1;
-  const nextBg = nextBgIndex < config.backgrounds.length ? config.backgrounds[nextBgIndex] : null;
-  
-  // Calculate parallax effect
-  const getParallaxStyle = (bg) => {
-    // Slow movement based on scroll position
-    const yOffset = scrollPercent * -50; // Move slightly upward as we scroll
-    
-    return {
-      transform: `translateY(${yOffset}px)`,
-      transition: 'transform 0.1s ease-out'
-    };
-  };
-  
-  const parallaxStyle = getParallaxStyle(currentBg);
-  
+  }), []);
+
+  // Calculate parallax effect for the far layer (slowest movement)
+  const parallaxOffset = useMemo(() => {
+    return scrollPosition * 0.05; // Very small multiplier for subtle movement
+  }, [scrollPosition]);
+
   return (
-    <div className="far-layer" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }}>
-      {/* Current background */}
-      <div 
-        className="background-element"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundImage: currentBg.type === 'gradient' 
-            ? currentBg.value 
-            : `url(${currentBg.value})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 1 - transitionProgress,
-          ...parallaxStyle
-        }}
-      />
-      
-      {/* Next background (for transition) */}
-      {nextBg && transitionProgress > 0 && (
-        <div 
-          className="background-element"
+    <div className="background-layer far-layer">
+      {/* Render a background div for each section */}
+      {Object.entries(sectionBackgrounds).map(([sectionId, styles]) => (
+        <div
+          key={sectionId}
+          className={`section-background ${activeSection === sectionId ? 'active' : ''}`}
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundImage: nextBg.type === 'gradient' 
-              ? nextBg.value 
-              : `url(${nextBg.value})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: transitionProgress,
-            ...getParallaxStyle(nextBg)
+            ...styles,
+            transform: `translateY(-${parallaxOffset}px)`,
+            opacity: activeSection === sectionId ? 1 : 0
           }}
-        />
-      )}
+        >
+          {/* Debug text to show which background is active - remove in production */}
+          <div style={{
+            position: 'absolute',
+            top: '10px',
+            left: '10px',
+            color: 'white',
+            background: 'rgba(0,0,0,0.5)',
+            padding: '5px',
+            borderRadius: '4px',
+            fontSize: '12px',
+            display: activeSection === sectionId ? 'block' : 'none'
+          }}>
+            Active: {sectionId}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -9,9 +9,9 @@ import SummarySection from './AcademicSection/Section5_Conclusion';
 
 const AcademicJourney = () => {
   return (
-    <div className="academic-journey">
+    <div id = "academic-journey" className="academic-journey">
       {/* Section Navigation Dots */}
-      <nav className="section-nav">
+      {/* <nav className="section-nav">
         <ul>
           <li className="active" onClick={() => document.getElementById('intro-section').scrollIntoView({ behavior: 'smooth' })}></li>
           <li onClick={() => document.getElementById('highschool-section').scrollIntoView({ behavior: 'smooth' })}></li>
@@ -20,7 +20,7 @@ const AcademicJourney = () => {
           <li onClick={() => document.getElementById('thesis-section').scrollIntoView({ behavior: 'smooth' })}></li>
           <li onClick={() => document.getElementById('summary-section').scrollIntoView({ behavior: 'smooth' })}></li>
         </ul>
-      </nav>
+      </nav> */}
       
       {/* Introduction Section */}
       <IntroSection />

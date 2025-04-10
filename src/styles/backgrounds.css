@@ -1,0 +1,51 @@
+/* Background container and layers */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind all content */
+    /* overflow: hidden; */
+    pointer-events: none; /* Allow clicks to pass through to content */
+  }
+  
+  /* Common styles for all background layers */
+  .background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Far layer is the base background layer */
+  .far-layer {
+    z-index: 0;
+  }
+  
+  /* Section backgrounds */
+  .section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .section-background.active {
+    opacity: 1;
+  }
+  
+  /* Animation for section transitions */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Will add media queries for responsiveness */
+  @media (max-width: 768px) {
+    /* Mobile adjustments if needed */
+  }

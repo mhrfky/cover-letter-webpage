@@ -61,6 +61,7 @@ const Navigation = () => {
   const navItems = [
     { id: 'intro-section', label: 'Intro' },
     { id: 'talents-section', label: 'Skills' },
+    { id: "academic-journey", label : "Academic"},
     { id: 'experience-section', label: 'Experience' },
     { id: 'projects-section', label: 'Projects' },
     { id: 'conclusion-section', label: 'Contact' }
