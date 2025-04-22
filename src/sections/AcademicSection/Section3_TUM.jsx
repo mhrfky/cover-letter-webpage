@@ -104,7 +104,7 @@ const TUMSection = () => {
                       >
                         <span 
                           style={{
-                            background: `${area.color}30`,
+                            // background: `${area.color}30`,
                             color: 'white',
                             padding: '5px 12px',
                             borderRadius: '20px',

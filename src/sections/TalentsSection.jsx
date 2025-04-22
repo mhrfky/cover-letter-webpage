@@ -1,7 +1,8 @@
 import React from 'react';
 import AnimatedElement from '../components/AnimatedElement';
 import SkillCard from '../components/cards/SkillCard';
-
+import MatrixScene from '../components/Matrix/MatrixScene'
+import StaticAsciiComponent from '../components/Matrix/StaticAsciiComponent';
 const TalentsSection = () => {
   // Skill data
   const skills = [
@@ -9,55 +10,35 @@ const TalentsSection = () => {
       id: 'fast-learner',
       title: "Fast Learner",
       description: "I can quickly adapt to new technologies and concepts, allowing me to be productive in diverse environments.",
-      instances: [
-        "Learned React in two weeks to build a client project",
-        "Picked up Python and data visualization for a research project",
-        "Mastered new frameworks and libraries as needed for projects"
-      ],
+      instances: [],
       animation: "slide-left"
     },
     {
       id: 'adaptable',
       title: "Adaptable",
       description: "Comfortable working in changing environments and pivoting based on new requirements or constraints.",
-      instances: [
-        "Successfully navigated changing project requirements",
-        "Worked across frontend and backend as needed",
-        "Adjusted to different team workflows and methodologies"
-      ],
+      instances: [],
       animation: "slide-right"
     },
     {
       id: 'self-development',
       title: "Self-Directed Learning",
       description: "I continuously seek out opportunities to improve my skills and knowledge in web development and beyond.",
-      instances: [
-        "Completed multiple online courses during free time",
-        "Built personal projects to develop new skills",
-        "Participate in tech communities and discussions"
-      ],
+      instances: [],
       animation: "slide-left"
     },
     {
       id: 'ownership',
       title: "Ownership Mindset",
       description: "I take responsibility for my work and ensure projects are completed to a high standard.",
-      instances: [
-        "Led development of key features from concept to deployment",
-        "Proactively identified and fixed issues before they affected users",
-        "Documented processes to help future team members"
-      ],
+      instances: [],
       animation: "tilt"
     },
     {
       id: 'quality',
       title: "Quality Focus",
       description: "I prioritize writing clean, maintainable code and delivering polished user experiences.",
-      instances: [
-        "Implemented comprehensive testing strategies",
-        "Refactored legacy code to improve performance",
-        "Made detailed code reviews to ensure high quality standards"
-      ],
+      instances: [],
       animation: "bounce"
     }
   ];
@@ -69,25 +50,63 @@ const TalentsSection = () => {
   };
   
   return (
-    <section id="talents-section">
-      <div className="section-content">
+    <section id="talents-section" className="section-large section-right">
+      {/* Matrix Scene in its own container with proper positioning */}
+      <MatrixScene
+        assetScale={1.0}
+        showDebug={false}
+        intensity={1.2}
+        speed={1.2}
+        showAsset={true}  // Set to true if you want to show the asset
+        containerStyle={{
+          height: '100%',
+          position: 'absolute',  // Make matrix scene an absolute background
+          top: 0,
+          left: 0,
+          width: '100%'
+        }}
+      />
+      <div className="section-content-large section-left">
+        <div className="w-full md:w-1/2">
+          <div style={{ position: 'absolute', top: '10%', left: '5%' }}>
+              <StaticAsciiComponent 
+                src="https://i.imgur.com/63ToT82.png"
+                width={200}
+                height={200}
+                scale={1}
+                cellSize={16}
+                float={true}
+                floatAmount={120}
+                floatSpeed={0.5}
+                fontColor="#00FF41"
+                letterSpacing={1}
+                shiny={true} // Enable shiny effect
+                glowColor="rgba(0, 255, 68, 0.8)"
+                glowSize={8}
+                pulse={true}
+                pulseSpeed={0.8}
+              />
+          </div>
+        </div>
+      </div>
+      <div className="section-content section-content-medium">
         {/* Section intro - hide when out of view */}
         <AnimatedElement 
           animationType="zoom-in"
           hideWhenOutOfView={true}
         >
-          <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem auto' }}>
+          <div className="section-header" style={{ textAlign: 'right', maxWidth: '800px', margin: '0 auto 2rem auto' }}>
             <h2 className="section-title">Who am I?</h2>
             <p className="section-subtitle">
-              I am a recent graduate from Technical University of Munich (TUM) with a Master's in Informatics 
-              focusing around Machine Learning and a Bachelor's in Computer Science. I have a large variety 
-              of talents and experiences. Kind of like Jack of All Trades, Master of None.
+              I am a versatile developer with a passion for building innovative and user-friendly applications. I have developed
+              a wide range of skills and experiences, including web development, software engineering, AI Solutions, Reinforcement Learning,
+              Backend Development, Game Development and more.
             </p>
           </div>
         </AnimatedElement>
         
         {/* Skills grid - each skill card hides when out of view */}
-        <div className="skills-grid">
+        {/* <div className="skills-grid">
           {skills.map((skill, index) => (
             <AnimatedElement 
               key={skill.id}
@@ -103,7 +122,7 @@ const TalentsSection = () => {
               />
             </AnimatedElement>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

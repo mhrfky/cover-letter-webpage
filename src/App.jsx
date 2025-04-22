@@ -10,7 +10,7 @@ import ScrollDebugger from './components/ScrollDebugger';
 import AcademicJourney from './sections/AcademicJourney';
 // Import styles - order matters, fixed.css must be last to override previous styles
 import './styles/main.css';
-
+import MatrixScene from './components/Matrix/MatrixScene';
 
 const App = () => {
   const [showDebugger, setShowDebugger] = useState(false);
@@ -28,9 +28,11 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app">
+    <div >
       {/* Main sections */}
+      
       <IntroSection />
+
       <TalentsSection />
 
       <AcademicJourney />

@@ -1,0 +1,35 @@
+/* MatrixScene CSS Fixes - Add this to your project */
+
+/* Fix #1: Remove overflow:hidden from sections */
+section {
+    overflow: visible !important;
+  }
+  
+  /* Fix #2: Ensure MatrixScene containers have correct z-index */
+  .matrix-container,
+  div[style*="position: relative"] {
+    position: relative !important;
+    z-index: 1 !important; /* Same as content, but will be behind due to stacking context */
+    background-color: transparent !important;
+  }
+  
+  /* Fix #3: Make section content appear on top of matrix */
+  .section-content {
+    position: relative !important;
+    z-index: 2 !important; /* Higher than matrix container */
+    background-color: transparent !important;
+  }
+  
+  /* Fix #4: Parent containers in sections may need explicit positioning */
+  section > div {
+    position: relative !important;
+    background-color: transparent !important;
+  }
+  
+  /* Fix #5: Ensure MatrixScene canvas is properly positioned */
+  canvas {
+    position: absolute !important;
+    width: 100% !important; 
+    height: 100% !important;
+    image-rendering: pixelated;
+  }

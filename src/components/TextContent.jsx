@@ -23,7 +23,8 @@ const TextContent = ({
       style={{ 
         textAlign, 
         maxWidth, 
-        margin: align === 'center' ? '0 auto' : '0'
+        margin: align === 'center' ? '0 auto' : '0',
+        backgroundColor: 'transparent !important',
       }}
     >
       {/* {title && (

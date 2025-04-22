@@ -6,22 +6,28 @@ import BogaziciSection from './AcademicSection/Section2_Bogazici';
 import TUMSection from './AcademicSection/Section3_TUM';
 import ThesisSection from './AcademicSection/Section4_MsThesis';
 import SummarySection from './AcademicSection/Section5_Conclusion';
+import MatrixScene from '../components/Matrix/MatrixScene';
 
 const AcademicJourney = () => {
   return (
-    <div className="academic-journey">
+    <div className="app">
       {/* Section Navigation Dots */}
-      <nav className="section-nav">
-        <ul>
-          <li className="active" onClick={() => document.getElementById('intro-section').scrollIntoView({ behavior: 'smooth' })}></li>
-          <li onClick={() => document.getElementById('highschool-section').scrollIntoView({ behavior: 'smooth' })}></li>
-          <li onClick={() => document.getElementById('bogazici-section').scrollIntoView({ behavior: 'smooth' })}></li>
-          <li onClick={() => document.getElementById('tum-section').scrollIntoView({ behavior: 'smooth' })}></li>
-          <li onClick={() => document.getElementById('thesis-section').scrollIntoView({ behavior: 'smooth' })}></li>
-          <li onClick={() => document.getElementById('summary-section').scrollIntoView({ behavior: 'smooth' })}></li>
-        </ul>
-      </nav>
-      
+
+      <MatrixScene
+        assetScale={1.0}
+        showDebug={false}
+        intensity={1.2}
+        speed={1.2}
+        showAsset={true}  // Set to true if you want to show the asset
+        containerStyle={{
+          height: '100%',
+          position: 'absolute',  // Make matrix scene an absolute background
+          top: 0,
+          left: 0,
+          width: '100%',
+          background : 'transparent'
+        }}
+      />
       {/* Introduction Section */}
       <IntroSection />
       
@@ -39,6 +45,7 @@ const AcademicJourney = () => {
       
       {/* Summary Section */}
       <SummarySection />
+      
       
       {/* Scroll to Top Button */}
       <button 

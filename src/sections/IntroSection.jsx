@@ -1,9 +1,24 @@
 import React from 'react';
 import AnimatedElement from '../components/AnimatedElement';
+import MatrixScene from '../components/Matrix/MatrixScene';
 
 const IntroSection = () => {
   return (
     <section id="intro-section" className="section-large section-center">
+      <MatrixScene
+        assetScale={1.0}
+        showDebug={false}
+        intensity={1.2}
+        speed={1.2}
+        showAsset={true}  // Set to true if you want to show the asset
+        containerStyle={{
+          height: '100%',
+          position: 'absolute',  // Make matrix scene an absolute background
+          top: 0,
+          left: 0,
+          width: '100%'
+        }}
+      />
       <div className="section-content section-content-medium">
 
         <AnimatedElement 

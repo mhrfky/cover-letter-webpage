@@ -1,22 +1,28 @@
 /* components.css - Styling for components like cards, tags, etc. */
 @import './base.css';
 @import './projectCard.css';
+
 /* Card styling */
 .card {
-  background-color: rgba(255, 255, 255, 0.05);
+  /* background-color: rgba(0, 30, 0, 0.5); */
   border-radius: 10px;
   padding: 2rem;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 68, 0.2);
   margin: 1rem 0;
+  color: var(--matrix-green);
 }
+
 /* Base styles for various cards */
 .narrative-card,
 .skill-card,
 .job-card,
 .project-card {
   box-sizing: border-box;
+  /* background-color: rgba(0, 30, 0, 0.5); */
+  box-shadow: 0 0 20px rgba(0, 255, 68, 0.2);
+  border-radius: 10px;
 }
 
 .narrative-card h2,
@@ -24,7 +30,8 @@
 .job-card h3,
 .project-card h3 {
   margin-top: 0;
-  color: #f8f8f8;
+  color: var(--matrix-green);
+  text-shadow: var(--matrix-light-glow);
 }
 
 .narrative-card p,
@@ -32,6 +39,7 @@
 .job-card p,
 .project-card p {
   line-height: 1.6;
+  color: var(--matrix-green);
 }
 
 /* Base styles for the job card */
@@ -39,6 +47,7 @@
   padding: 1rem;
   margin-bottom: 2rem;
   width: 100%;
+  /* background-color: rgba(0, 30, 0, 0.5); */
 }
 
 /* Left-aligned job card */
@@ -78,6 +87,7 @@
   position: absolute;
   right: 0.5em;
   top: 0;
+  color: var(--matrix-green);
 }
 
 /* Make tech tags flow correctly based on alignment */
@@ -94,21 +104,26 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  background-color: transparent !important;
 }
+
 .narrative-gif {
   margin-top: 2rem;
   text-align: center;
+  background-color: transparent !important;
 }
 
 .narrative-gif img {
   max-width: 100%;
   border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 68, 0.3);
 }
 
 .caption {
   font-size: 0.9rem;
   opacity: 0.7;
   margin-top: 0.5rem;
+  color: var(--matrix-green);
 }
 
 /* Tags styling */
@@ -120,11 +135,23 @@
 }
 
 .tech-tag {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  /* background-color: rgba(0, 30, 0, 0.8); */
+  color: var(--matrix-green);
+  border: 1px solid var(--matrix-green);
   padding: 0.3rem 0.7rem;
   border-radius: 20px;
   font-size: 0.8rem;
+}
+
+/* Links styling */
+a {
+  color: var(--matrix-green);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: var(--matrix-light-glow);
 }
 
 /* Skills layout */
@@ -135,11 +162,59 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: transparent !important;
+}
+
+/* Skill card styling */
+.skill-card {
+  /* background-color: rgba(0, 30, 0, 0.5); */
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 255, 68, 0.2);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 68, 0.4);
+  transform: translateY(-5px);
+}
+
+.skill-title {
+  color: var(--matrix-green);
+  text-shadow: var(--matrix-light-glow);
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.skill-description {
+  color: var(--matrix-green);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.skill-instances {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--matrix-green);
+}
+
+.skill-instances li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Section header - ensure no background */
+.section-header {
+  background-color: transparent !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+    background-color: transparent !important;
   }
 }
