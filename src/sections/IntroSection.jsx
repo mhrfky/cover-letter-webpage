@@ -19,18 +19,28 @@ const IntroSection = () => {
                           animationDuration="slow"
                           onEnter={() => console.log('Intro section entered')}
                       >
-                          <h2 className="section-title">Interactive Cover Letter</h2>
-                          <p className="section-subtitle">
-                              I have noticed that traditional cover letters might come as stale and generic.
-                              So, I decided to create a more lighthearted cover letter to share my journey in
-                              a fun way. I hope you enjoy it!
-                          </p>
+                          <div className='narrative-card' style={{
+                              height: '25vh',
+                              // display: 'flex',
+                              justifyContent: 'center',
+                              gap: '5vw',
+                              // width: '100%',
+                              zIndex: 2,
+
+                          }}>
+                              <h2 className="section-title">Interactive Cover Letter</h2>
+                              <p className="section-subtitle">
+                                  I have noticed that traditional cover letters might come as stale and generic.
+                                  So, I decided to create a more lighthearted cover letter to share my journey in
+                                  a fun way. I hope you enjoy it!
+                              </p>
+                          </div>
                       </AnimatedElement>
 
                   </div>
               </section>
 
-              <section id="talents-section" height = "200vh" className="section-large section-right">
+              <section id="talents-section" height="200vh" className="section-large section-right">
 
 
                   <div className="section-content section-content-medium">

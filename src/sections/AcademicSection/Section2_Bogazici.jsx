@@ -32,7 +32,7 @@ const BogaziciSection = () => {
       <section className="section-right section-large" id="bogazici-section">
         <div className="section-content force-right-align">
           {/* Bogazici Experience */}
-          <div className="mb-16">
+          <div className="section-header">
             <h2 className="section-title text-center mb-10">Bogazici University Experience</h2>
 
             <div className="flex flex-col md:flex-row gap-8 items-start">

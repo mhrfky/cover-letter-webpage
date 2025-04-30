@@ -31,7 +31,7 @@ const TUMSection = () => {
 
             {/* TUM Master's Experience */}
             <div>
-              <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="section-header">
                 {/* Left column: Master's Program Description */}
                 <div className="w-full md:w-1/2">
                   <AnimatedElement

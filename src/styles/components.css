@@ -23,6 +23,7 @@
   /* background-color: rgba(0, 30, 0, 0.5); */
   box-shadow: 0 0 20px rgba(0, 255, 68, 0.2);
   border-radius: 10px;
+  background-color: rgba(0, 1, 0, 0.9);
 }
 
 .narrative-card h2,
@@ -208,7 +209,13 @@ a:hover {
 
 /* Section header - ensure no background */
 .section-header {
-  background-color: transparent !important;
+  background-color: rgba(0, 0, 0, 0.9);
+  gap: 0.5rem;
+
+  padding: 4rem;
+  box-shadow: 0 0 20px rgba(0, 255, 68, 0.2);
+  border-radius: 10px;
+
 }
 
 /* Responsive adjustments */

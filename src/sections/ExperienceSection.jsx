@@ -89,15 +89,7 @@ const ExperienceSection = () => {
             <h2 className="section-title" style={{textAlign: "center", marginBottom: '4vh'}}>Professional Experience</h2>
 
             <div className="flex justify-center">
-              <div className="fancy-experience-intro" style={{
-                maxWidth: "65vw",
-                background: "linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(79, 70, 229, 0.3) 100%)",
-                padding: "3vh 4vw",
-                borderRadius: "8px",
-                boxShadow: "0 1vh 2.5vh rgba(0, 0, 0, 0.1)",
-                margin: "0 auto",
-                border: "1px solid rgba(99, 102, 241, 0.2)"
-              }}>
+              <div className="section-header">
                 <p className="section-subtitle" style={{
                   textAlign: "center",
                   lineHeight: "1.8",

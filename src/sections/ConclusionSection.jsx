@@ -49,10 +49,9 @@ const ConclusionSection = () => {
                 animationDuration="slow"
                 onEnter={() => console.log('Conclusion section entered')}
             >
-                <div className="connect-card" style={{
-                    background: 'rgba(0, 77, 0, 0.5)',
+                <div className="section-header" style={{
                     borderRadius: '1.5vw',
-                    boxShadow: '0 0 3vw rgba(0, 255, 65, 0.2)',
+                    boxShadow: '0 0 3vw rgba(0, 255, 65, 0.8)',
                     padding: '4vh 3vw',
                     border: '1px solid rgba(0, 255, 65, 0.3)',
                     display: 'flex',
@@ -68,7 +67,7 @@ const ConclusionSection = () => {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        opacity: 0.05,
+                        opacity: 0.2,
                         zIndex: 0,
                         overflow: 'hidden',
                         pointerEvents: 'none'
@@ -81,7 +80,7 @@ const ConclusionSection = () => {
                                 fontSize: '1rem',
                                 left: `${Math.random() * 100}%`,
                                 top: 0,
-                                opacity: Math.random() * 0.8 + 0.2,
+                                opacity:1,
                                 animation: `matrixRain ${Math.random() * 15 + 5}s linear infinite`,
                                 animationDelay: `${Math.random() * 5}s`
                             }}>
@@ -216,7 +215,7 @@ const ConclusionSection = () => {
                                     marginBottom: '1vh',
                                     padding: '10px',
                                     borderRadius: '15px',
-                                    background: 'rgba(0, 40, 0, 0.6)',
+                                    background: `radial-gradient(circle, rgba(0, 0, 0, 0) 0%, ${social.color}4D 250%)`,
                                     border: `1px solid ${social.color}40`,
                                     boxShadow: activeIcon === social.id ? `0 0 20px ${social.color}80` : 'none',
                                     transition: 'all 0.3s ease',

@@ -149,29 +149,27 @@ const ProjectsSection = () => {
           position: 'relative'
         }}>
           <AnimatedElement animationType="fade">
-            <h2 className="section-title" style={{
-              textAlign: "center",
-              marginBottom: '4vh',
-              color: matrixGreen
-            }}>Project Showcase</h2>
+
 
             <div className="flex justify-center">
-              <div className="fancy-projects-intro" style={{
-                maxWidth: "65vw",
-                background: "linear-gradient(135deg, rgba(0, 77, 0, 0.2) 0%, rgba(0, 77, 0, 0.4) 100%)",
-                padding: "3vh 4vw",
-                borderRadius: "8px",
-                boxShadow: `0 1vh 2.5vh rgba(0, 255, 65, 0.1)`,
-                margin: "0 auto",
-                border: `1px solid ${matrixBorderGreen}`
-              }}>
+              <div className="section-header">
+                <h2 className="section-title" style={{
+                  textAlign: "center",
+                  marginBottom: '4vh',
+                  color: matrixGreen
+                }}>Project Showcase</h2>
                 <p className="section-subtitle" style={{
                   textAlign: "center",
                   lineHeight: "1.8",
                   marginBottom: "2vh",
                   color: '#e2e8f0'
                 }}>
-                  Below is a collection of <span style={{color: matrixGreen, fontWeight: "600"}}>personal projects and research</span> that showcase my technical abilities and problem-solving approach. These projects span a wide range of domains, from <span style={{color: matrixGreen, fontWeight: "600"}}>machine learning</span> and <span style={{color: matrixGreen, fontWeight: "600"}}>computer vision</span> to <span style={{color: matrixGreen, fontWeight: "600"}}>web development</span> and <span style={{color: matrixGreen, fontWeight: "600"}}>high-performance computing</span>.
+                  Below is a collection of <span style={{color: matrixGreen, fontWeight: "600"}}>personal projects and research</span> that
+                  showcase my technical abilities and problem-solving approach. These projects span a wide range of
+                  domains, from <span style={{color: matrixGreen, fontWeight: "600"}}>machine learning</span> and <span
+                    style={{color: matrixGreen, fontWeight: "600"}}>computer vision</span> to <span
+                    style={{color: matrixGreen, fontWeight: "600"}}>web development</span> and <span
+                    style={{color: matrixGreen, fontWeight: "600"}}>high-performance computing</span>.
                 </p>
 
                 <p className="section-subtitle" style={{
@@ -179,7 +177,11 @@ const ProjectsSection = () => {
                   lineHeight: "1.8",
                   color: '#e2e8f0'
                 }}>
-                  Each project represents a unique challenge I've embraced, driven by <span style={{color: matrixGreen, fontWeight: "600"}}>curiosity</span> and a desire to <span style={{color: matrixGreen, fontWeight: "600"}}>expand my technical horizons</span>. They demonstrate not only my coding abilities but also my approach to research, problem decomposition, and delivering elegant solutions.
+                  Each project represents a unique challenge I've embraced, driven by <span
+                    style={{color: matrixGreen, fontWeight: "600"}}>curiosity</span> and a desire to <span
+                    style={{color: matrixGreen, fontWeight: "600"}}>expand my technical horizons</span>. They
+                  demonstrate not only my coding abilities but also my approach to research, problem decomposition, and
+                  delivering elegant solutions.
                 </p>
               </div>
             </div>
