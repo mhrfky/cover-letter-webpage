@@ -19,9 +19,7 @@ const IntroSection = () => {
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem auto', backgroundColor: 'transparent !important' }}>
             <h2 className="section-title">My Academic Journey</h2>
             <p className="section-subtitle">
-              I've studied a lot, real a lot. From the competitive entrance exams to Turkey's best IT program to my
-              specialized AI research at TUM, my academic journey has been intense but rewarding. These experiences
-              have shaped not just what I know, but how I approach problems and continuous learning.
+              From succeeding in Turkey's competitive entrance exams to its top IT program to pursuing specialized AI research at TUM, my academic journey has been intense but rewarding, shaping both my knowledge and approach to continuous learning.
             </p>
           </div>
           <TextContent

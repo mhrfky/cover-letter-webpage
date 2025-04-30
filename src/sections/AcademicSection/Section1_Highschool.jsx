@@ -1,8 +1,7 @@
 // src/sections/HighSchoolSection.js
 import React from 'react';
 import AnimatedElement from '../../components/AnimatedElement';
-import TextContent from '../../components/TextContent';
-import NarrativeCard from '../../components/cards/NarrativeCard';
+import AsciiArtCard from "../../components/AsciiArtCard.jsx";
 
 const HighSchoolSection = () => {
   return (
@@ -30,28 +29,7 @@ const HighSchoolSection = () => {
           </AnimatedElement>
         </div>
       </div>
-      
-      {/* Right side content */}
-      <div className="section-content section-right">
-        <div className="w-full md:w-1/2">
-          <AnimatedElement 
-            animationType="slide-right"
-            animationDuration="normal"
-            animationEasing="smooth"
-            onEnter={() => console.log('Bogazici praise entered')}
-            onExit={() => console.log('Bogazici praise exited')}
-          >
-            <NarrativeCard
-              title="Bogazici University"
-              description="Regarded as the most prestigious university in Turkey, Bogazici University's Computer Engineering program is highly competitive, accepting only the top 1000 students nationally. The rigorous curriculum and world-class faculty provide an exceptional foundation in computer science fundamentals and advanced topics."
-              color="#4285f4"
-              position="center"
-              gif="/placeholder-bogazici.gif"
-              caption="Bogazici University campus"
-            />
-          </AnimatedElement>
-        </div>
-      </div>
+
     </section>
   );
 };

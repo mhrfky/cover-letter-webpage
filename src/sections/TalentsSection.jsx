@@ -1,8 +1,6 @@
 import React from 'react';
 import AnimatedElement from '../components/AnimatedElement';
-import SkillCard from '../components/cards/SkillCard';
-import MatrixScene from '../components/Matrix/MatrixScene'
-import StaticAsciiComponent from '../components/Matrix/StaticAsciiComponent';
+import AsciiComponent from '../components/Matrix/AsciiComponent';
 const TalentsSection = () => {
   // Skill data
   const skills = [
@@ -52,36 +50,22 @@ const TalentsSection = () => {
   return (
     <section id="talents-section" className="section-large section-right">
       {/* Matrix Scene in its own container with proper positioning */}
-      <MatrixScene
-        assetScale={1.0}
-        showDebug={false}
-        intensity={1.2}
-        speed={1.2}
-        showAsset={true}  // Set to true if you want to show the asset
-        containerStyle={{
-          height: '100%',
-          position: 'absolute',  // Make matrix scene an absolute background
-          top: 0,
-          left: 0,
-          width: '100%'
-        }}
-      />
-      <div className="section-content-large section-left">
+      <div className="section-content-large section-left" height="150vh">
         <div className="w-full md:w-1/2">
-          <div style={{ position: 'absolute', top: '10%', left: '5%' }}>
-              <StaticAsciiComponent 
-                src="https://i.imgur.com/63ToT82.png"
+          <div style={{ position: 'absolute', top: '-20%', left: '-18%' }}>
+              <AsciiComponent
+                filePath="./can-do.txt"
                 width={200}
                 height={200}
                 scale={1}
-                cellSize={16}
+                cellSize={24}
                 float={true}
-                floatAmount={120}
-                floatSpeed={0.5}
-                fontColor="#00FF41"
+                floatAmount={20}
+                floatSpeed={0.1}
+                fontColor="#63c5ed"
                 letterSpacing={1}
                 shiny={true} // Enable shiny effect
-                glowColor="rgba(0, 255, 68, 0.8)"
+                glowColor="rgba(99, 197, 237, 0.8)"
                 glowSize={8}
                 pulse={true}
                 pulseSpeed={0.8}
@@ -89,9 +73,10 @@ const TalentsSection = () => {
           </div>
         </div>
       </div>
+
       <div className="section-content section-content-medium">
         {/* Section intro - hide when out of view */}
-        <AnimatedElement 
+        <AnimatedElement
           animationType="zoom-in"
           hideWhenOutOfView={true}
         >
@@ -104,25 +89,7 @@ const TalentsSection = () => {
             </p>
           </div>
         </AnimatedElement>
-        
-        {/* Skills grid - each skill card hides when out of view */}
-        {/* <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <AnimatedElement 
-              key={skill.id}
-              animationType={skill.animation}
-              animationDelay={getDelay(index)}
-              onEnter={() => console.log(`${skill.id} entered viewport`)}
-              hideWhenOutOfView={true}
-            >
-              <SkillCard 
-                title={skill.title}
-                description={skill.description}
-                instances={skill.instances}
-              />
-            </AnimatedElement>
-          ))}
-        </div> */}
+
       </div>
     </section>
   );

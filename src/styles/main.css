@@ -3,7 +3,7 @@
 /* Import all modular stylesheets */
 @import './base.css';
 @import './components.css';
-/* @import './animations.css'; */
+ @import './animations.css';
 /* @import './navigation.css'; */
 
 /* Any additional site-specific styles can go here */

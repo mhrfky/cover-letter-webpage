@@ -1,6 +1,6 @@
 // src/components/cards/NarrativeCard.js
 import React from 'react';
-
+import TextContentCard from "../TextContentCard.jsx";
 const NarrativeCard = ({
   title,
   description,
@@ -23,7 +23,7 @@ const NarrativeCard = ({
   };
 
   return (
-    <div 
+    <div
       className="narrative-card card"
       style={{
         borderLeft: `4px solid ${color}`,
@@ -32,10 +32,20 @@ const NarrativeCard = ({
     >
       <h2>{title}</h2>
       <p>{description}</p>
-      
+
       {gif && (
         <div className="narrative-gif">
-          <img src={gif} alt={title} />
+          <TextContentCard
+              title="Project Overview"
+              description="Key points from our research:"
+              textFilePath="/bogazici.txt"
+              color="#00796b"
+              textColor="#2c3e50"
+              fontFamily="Georgia, serif"
+              fontSize="4px"
+              position="left"
+          />
+
           {caption && <p className="caption">{caption}</p>}
         </div>
       )}

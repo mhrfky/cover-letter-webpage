@@ -15,7 +15,6 @@ const MatrixScene = ({
   containerStyle = {}, 
   assetScale = 1.0,
   children,
-  showDebug = false,
   assetUrl = null,
   darkMode = true,
   intensity = 1.0,

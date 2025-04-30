@@ -29,29 +29,32 @@ const App = () => {
 
   return (
     <div >
+        <section>
+
       {/* Main sections */}
-      
+
       <IntroSection />
 
-      <TalentsSection />
+      {/*<TalentsSection />*/}
 
       <AcademicJourney />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ConclusionSection />
-      
-      {/* Navigation components */}
-      <Navigation />
-      <ScrollToTop />
-      
-      {/* Scroll indicator */}
-      <div className="scroll-indicator">
-        <p>Scroll to explore</p>
-        <div className="scroll-arrow">↓</div>
-      </div>
-      
-      {/* Debugger - press Ctrl+D to toggle */}
-      {showDebugger && <ScrollDebugger />}
+
+        <section id="experience-section" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+        }}>
+                <MatrixScene/>
+                <ExperienceSection/>
+                <section/>
+                <ProjectsSection/>
+
+        </section>
+            <ConclusionSection/>
+
+            {/* Debugger - press Ctrl+D to toggle */}
+            {showDebugger && <ScrollDebugger/>}
+        </section>
     </div>
   );
 };

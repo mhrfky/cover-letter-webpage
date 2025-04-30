@@ -12,48 +12,31 @@ const AcademicJourney = () => {
   return (
     <div className="app">
       {/* Section Navigation Dots */}
+        <section>
+            <MatrixScene/>
 
-      <MatrixScene
-        assetScale={1.0}
-        showDebug={false}
-        intensity={1.2}
-        speed={1.2}
-        showAsset={true}  // Set to true if you want to show the asset
-        containerStyle={{
-          height: '100%',
-          position: 'absolute',  // Make matrix scene an absolute background
-          top: 0,
-          left: 0,
-          width: '100%',
-          background : 'transparent'
-        }}
-      />
-      {/* Introduction Section */}
-      <IntroSection />
+
+            {/* Introduction Section */}
+          <IntroSection />
+
+          {/* High School Section */}
+          <HighSchoolSection />
+
+          {/* Bogazici University Section */}
+          <BogaziciSection />
+
+          {/* TUM Section */}
+          <TUMSection />
+
+          {/* Thesis Section */}
+          {/* <ThesisSection /> */}
+
+          {/* Summary Section */}
+          <SummarySection />
+
       
-      {/* High School Section */}
-      <HighSchoolSection />
-      
-      {/* Bogazici University Section */}
-      <BogaziciSection />
-      
-      {/* TUM Section */}
-      <TUMSection />
-      
-      {/* Thesis Section */}
-      {/* <ThesisSection /> */}
-      
-      {/* Summary Section */}
-      <SummarySection />
-      
-      
-      {/* Scroll to Top Button */}
-      <button 
-        className="scroll-to-top" 
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      >
-        ↑
-      </button>
+
+        </section>
     </div>
   );
 };
